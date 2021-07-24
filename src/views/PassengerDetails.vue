@@ -1,6 +1,6 @@
 <template>
   <h1>Details</h1>
-
+<hr>
   <div v-if="passenger">
     <h1>{{ passenger.name }}</h1>
     <h3>{{ passenger.airline.country }}</h3>
