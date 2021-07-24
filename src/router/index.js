@@ -1,12 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
+import PassengerList from '../views/PassengerList.vue'
 import About from '../views/About.vue'
+import PassengerDetails from '../views/PassengerDetails.vue'
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home,
+    name: 'PassengerList',
+    component: PassengerList,
     props: (route) => ({
       page: parseInt(route.query.page) || 0,
       perPage: parseInt(route.query.perPage) || 10
@@ -16,6 +17,12 @@ const routes = [
     path: '/about',
     name: 'About',
     component: About
+  },
+  {
+    path: '/passenger/:id',
+    name: 'PassengerDetails',
+    component: PassengerDetails,
+    props: true
   }
   // {
   //   path: '/passenger/:id',

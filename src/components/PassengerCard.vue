@@ -1,10 +1,18 @@
 <template>
-  <!-- <router-link class="event-link" :to="{name: 'EventDetails', params: {id: event._id}}"> -->
-  <div class="event-card">
-    <span>{{ passenger._id }}</span>
-    <h4>{{ passenger.name }}</h4>
-  </div>
-  <!-- </router-link> -->
+  <router-link
+    class="event-link"
+    :to="{ name: 'PassengerDetails', params: { id: passenger._id } }"
+  >
+    <div class="event-card">
+      <img :src="passenger.airline.logo" />
+      <img
+        v-for="airline in passenger.airline"
+        :key="airline.id"
+        :src="airline.logo"
+      />
+      <h4>{{ passenger.name }}</h4>
+    </div>
+  </router-link>
 </template>
 
 <script>
@@ -22,7 +30,7 @@ export default {
 <style scoped>
 .event-card {
   padding: 20px;
-  width: 250px;
+  width: 300px;
   cursor: pointer;
   border: 1px solid #39495c;
   margin-bottom: 18px;
@@ -36,5 +44,10 @@ export default {
 .event-link {
   color: #2c3e50;
   text-decoration: none;
+}
+
+img {
+  width: 300px;
+  height: auto;
 }
 </style>
