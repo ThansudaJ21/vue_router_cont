@@ -4,6 +4,8 @@ import About from '../views/About.vue'
 import PassengerDetails from '../views/Passenger/Details.vue'
 import PassengerLayout from '../views/Passenger/Layout.vue'
 import PassengerEdit from '../views/Passenger/Edit.vue'
+import NotFound from '@/views/Passenger/NotFound.vue'
+
 const routes = [
   {
     path: '/',
@@ -38,7 +40,18 @@ const routes = [
         props: true
       },
     ]
-  }
+  },
+  {
+    path: '/404/:resource',
+    name: '404Resource',
+    component: NotFound,
+    props: true
+  },
+  {
+    path: '/:catchAll(.*)',
+    name: 'NotFound',
+    component: NotFound,
+  },
 ]
 
 const router = createRouter({
