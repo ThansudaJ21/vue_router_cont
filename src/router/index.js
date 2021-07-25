@@ -1,8 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import PassengerList from '../views/PassengerList.vue'
 import About from '../views/About.vue'
-import PassengerDetails from '../views/PassengerDetails.vue'
-
+import PassengerDetails from '../views/Passenger/Details.vue'
+import PassengerLayout from '../views/Passenger/Layout.vue'
+import PassengerEdit from '../views/Passenger/Edit.vue'
 const routes = [
   {
     path: '/',
@@ -20,51 +21,24 @@ const routes = [
   },
   {
     path: '/passenger/:id',
-    name: 'PassengerDetails',
-    component: PassengerDetails,
-    props: true
+    name: 'PassengerLayout',
+    component: PassengerLayout,
+    props: true,
+    children: [
+      {
+        path: '',
+        name: 'PassengerDetails',
+        component: PassengerDetails
+       
+      },
+      {
+        path: '/passenger/:id/edit',
+        name: 'PassengerEdit',
+        component: PassengerEdit,
+        props: true
+      },
+    ]
   }
-  // {
-  //   path: '/passenger/:id',
-  //   name: 'EventLayout',
-  //   component: EventLayout,
-  //   props: true,
-  //   children: [
-  //     {
-  //       path: '',
-  //       name: 'EventDetails',
-  //       component: EventDetails
-  //     },
-  //     {
-  //       path: '/event/:id/register',
-  //       name: 'EventRegister',
-  //       component: EventRegister,
-  //       props: true
-  //     },
-  //     {
-  //       path: '/event/:id/edit',
-  //       name: 'EventEdit',
-  //       component: EventEdit,
-  //       props: true
-  //     }
-  //   ]
-  // },
-  // {
-  //   path: '/404/:resource',
-  //   name: '404Resource',
-  //   component: NotFound,
-  //   props: true
-  // },
-  // {
-  //   path: '/:catchAll(.*)',
-  //   name: 'NotFound',
-  //   component: NotFound,
-  // },
-  // {
-  //   path: '/network-error',
-  //   name: 'NetworkError',
-  //   component: NetWorkError,
-  // }
 ]
 
 const router = createRouter({
