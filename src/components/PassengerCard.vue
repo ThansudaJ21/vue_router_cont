@@ -10,7 +10,8 @@
         :key="airline.id"
         :src="airline.logo"
       />
-      <h4>{{ passenger.name }}</h4>
+      <h4>Name: {{ passenger.name }}</h4>
+      <h4>Trips: {{ passenger.trips }}</h4>
     </div>
   </router-link>
 </template>
