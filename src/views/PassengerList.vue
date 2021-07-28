@@ -14,7 +14,7 @@
 import PassengerCard from '@/components/PassengerCard.vue'
 import PassengerService from '@/services/PassengerService.js'
 // import { watchEffect } from '@vue/runtime-core'
-import NProgress from 'nprogress'
+// import NProgress from 'nprogress'
 // import axios from 'axios'
 
 export default {
@@ -39,7 +39,7 @@ export default {
     }
   },
   beforeRouteEnter(routeTo, routeFrom, next) {
-    NProgress.start()
+    // NProgress.start()
     // watchEffect(() => {
     PassengerService.getPassengers(
       parseInt(routeTo.query.perPage) || 10,
@@ -56,13 +56,13 @@ export default {
       .catch(() => {
         next({ name: 'NetworkError' })
       })
-      .finally(() => {
-        NProgress.done()
-      })
+      // .finally(() => {
+      //   NProgress.done()
+      // })
   },
 
   beforeRouteUpdate(routeTo, routeFrom, next) {
-    NProgress.start()
+    // NProgress.start()
     PassengerService.getPassengers(
       parseInt(routeTo.query.perPage) || 10,
       parseInt(routeTo.query.page) || 0
@@ -76,9 +76,9 @@ export default {
       .catch(() => {
         next({ name: 'NetworkError' })
       })
-      .finally(() => {
-        NProgress.done()
-      })
+      // .finally(() => {
+      //   NProgress.done()
+      // })
   },
 
   computed: {
