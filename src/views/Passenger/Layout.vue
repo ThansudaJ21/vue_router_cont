@@ -28,16 +28,13 @@ export default {
       .then((response) => {
         this.passenger = response.data
         if (response && response.status == 204) {
-          this.$router.push ({
+          this.$router.push({
             name: '404Resource',
-            params: {resource: 'passenger'}
+            params: { resource: 'passenger' }
           })
         }
       })
-      .catch(() => {
-       
-      })
+      .catch(() => {})
   }
 }
 </script>
-

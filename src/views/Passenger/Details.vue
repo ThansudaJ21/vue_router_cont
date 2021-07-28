@@ -28,8 +28,10 @@
 </template>
 
 <script>
+// import NProgress from 'nprogress'
 export default {
   props: ['passenger'],
+
   computed: {
     check: function () {
       var check = this.passenger._id

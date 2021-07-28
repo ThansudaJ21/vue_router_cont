@@ -16,7 +16,6 @@ export default {
 </script>
 
 <style>
-
 /* Add style */
 @keyframes yellowfade {
   from {
@@ -31,7 +30,6 @@ export default {
   animation-name: yellowfade;
   animation-duration: 5s;
 }
-
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

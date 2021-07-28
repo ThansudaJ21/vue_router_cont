@@ -5,6 +5,7 @@ import PassengerDetails from '../views/Passenger/Details.vue'
 import PassengerLayout from '../views/Passenger/Layout.vue'
 import PassengerEdit from '../views/Passenger/Edit.vue'
 import NotFound from '@/views/Passenger/NotFound.vue'
+import NProgress from 'nprogress'
 
 const routes = [
   {
@@ -31,14 +32,13 @@ const routes = [
         path: '',
         name: 'PassengerDetails',
         component: PassengerDetails
-       
       },
       {
         path: '/passenger/:id/edit',
         name: 'PassengerEdit',
         component: PassengerEdit,
         props: true
-      },
+      }
     ]
   },
   {
@@ -50,13 +50,21 @@ const routes = [
   {
     path: '/:catchAll(.*)',
     name: 'NotFound',
-    component: NotFound,
-  },
+    component: NotFound
+  }
 ]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
+})
+
+router.beforeEach(() => {
+  NProgress.start()
+})
+
+router.afterEach(() => {
+  NProgress.done()
 })
 
 export default router

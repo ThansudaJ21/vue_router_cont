@@ -7,7 +7,7 @@
 <script>
 export default {
   props: ['passenger'],
-  inject: ["GStore"], //<---- Inject the glebal Store
+  inject: ['GStore'], //<---- Inject the glebal Store
   methods: {
     edit() {
       // Assuming successful API call to register them
@@ -16,15 +16,15 @@ export default {
 
       this.$router.push({
         name: 'PassengerList',
-        params: {id: this.passenger._id}
+        params: { id: this.passenger._id }
       }),
-      this.GStore.flashMessage = 'You are successfully updated for ' + this.passenger.name
+        (this.GStore.flashMessage =
+          'You are successfully updated for ' + this.passenger.name)
       setTimeout(() => {
         // After 3 seconds remove it
         this.GStore.flashMessage = ''
       }, 3000)
     }
   }
-  
 }
 </script>
