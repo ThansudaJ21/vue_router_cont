@@ -5,6 +5,10 @@
         >Details</router-link
       >
       |
+      <router-link :to="{ name: 'Airline', params: { id } }"
+        >Airline</router-link
+      >
+      |
       <router-link :to="{ name: 'PassengerEdit', params: { id } }"
         >Edit</router-link
       >
