@@ -56,9 +56,9 @@ export default {
       .catch(() => {
         next({ name: 'NetworkError' })
       })
-      // .finally(() => {
-      //   NProgress.done()
-      // })
+    // .finally(() => {
+    //   NProgress.done()
+    // })
   },
 
   beforeRouteUpdate(routeTo, routeFrom, next) {
@@ -76,9 +76,9 @@ export default {
       .catch(() => {
         next({ name: 'NetworkError' })
       })
-      // .finally(() => {
-      //   NProgress.done()
-      // })
+    // .finally(() => {
+    //   NProgress.done()
+    // })
   },
 
   computed: {
